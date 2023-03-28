@@ -1,0 +1,25 @@
+{
+  "short_name": "Pulkka",
+  "name": "Pulkka Clock-In, Clock-Out",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#FF2222",
+  "shortcuts": [],
+  "description": "Simple clock-in, clock-out app that stores your data in the browser's local storage and allows you to export it as a CSV file.",
+  "screenshots": []
+}

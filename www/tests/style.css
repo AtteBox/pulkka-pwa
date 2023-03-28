@@ -1,0 +1,107 @@
+body {
+    background-color: #fff;
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    background-color: #000;
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0.5em;
+    min-width:max-content;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.test {
+    border: 1px solid #000;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 1em;
+    padding-top: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0.25em;
+}
+
+li.pass {
+    color: #191;
+}
+
+li.fail {
+    color: #d11;
+}
+
+#spanHeadingAddInfo {
+    position: absolute;
+    top: 2.8em;
+    left: 13.5em;
+    color: #d11;
+    font-size: 0.8em;
+    font-style: italic;
+    width: max-content;
+}
+
+#ulTestStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#liTotalTests {
+    color: #000;
+}
+
+#liTotalPasses {
+    color: #191;
+}
+
+#liTotalFails {
+    color: #d11;
+}
+
+li::before {
+    content: "\1F3B2";
+    font-size: 80%;
+    margin-right: 0.2em;
+}
+
+#rootContainer {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+@media screen and (max-width: 800px) {
+    #rootContainer {
+        grid-template-columns: 100%;
+    }
+}
+
+#testResultsContainer {
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+#testAppContainer {
+    background-color: #fff;
+    border: 1px solid #000;
+    margin: 0.5em;
+    padding: 0.5em;
+}
