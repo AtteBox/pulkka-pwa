@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/icon-192.png">
+    <link rel="manifest" href="/manifest.json">
+    <title>...</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="main.js">
+    </script>
+</head>
+
+<body>
+    <div id="background">
+        <div id="contentContainer">
+            <div id="containerHeader">
+                <div id="containerHeaderLeft">
+                    <h1 id="headingTitle"></h1>
+                    <span id="spanAppVersion"></span>
+                    <button id="btnAbout"></button>
+                </div>
+                <div id="containerHeaderRight">
+                    <div id="containerLanguageSelection"></div>
+                </div>
+            </div>
+
+            <div id="containerWelcomeText">
+                <div id="txtWelcomeText"></div>
+            </div>
+            <button id="btnAddStamp"></button>
+            <div id="addStampValidationContainer" class="validationMsgContainer">
+                <p id="addStampValidationMsg"></p>
+            </div>
+            <h2 id="headingStamps"></h2>
+            <div id="containerStamps"></div>
+            <div id="containerStampFunctions">
+                <button id="btnClearStamps"></button>
+                <button id="btnDownloadStampsCsv"></button>
+            </div>
+        </div>
+    </div>
+    <div id="editStampModal" class="modal">
+        <div class="modalContent">
+            <div class="modalHeader">
+                <h2 id="editStampModalHeading"></h2>
+            </div>
+            <div class="modal-body">
+                <div id="editStampModalBody">
+                    <div class="validationMsgContainer">
+                        <p id="editStampValidationMsg"></p>
+                    </div>
+                    <label id="lblStampDate" for="inpStampDate"></label>
+                    <input id="inpStampDate" type="date" />
+                    <label id="lblStampTime" for="inpStampTime"></label>
+                    <input id="inpStampTime" type="time" />
+                    <label id="lblStampType" for="selStampType"></label>
+                    <select id="selStampType">
+                    </select>
+                </div>
+            </div>
+            <div class="modalFooter">
+                <button id="btnEditStampModalSave"></button>
+                <button id="btnEditStampModalCancel"></button>
+            </div>
+        </div>
+    </div>
+    <div id="confirmModal" class="modal">
+        <div class="modalContent">
+            <div class="modalHeader">
+                <h2 id="confirmModalHeading"></h2>
+            </div>
+            <div class="modal-body">
+                <div id="confirmModalBody">
+                    <p id="confirmModalText"></p>
+                </div>
+            </div>
+            <div class="modalFooter">
+                <button id="btnConfirmModalConfirm"></button>
+                <button id="btnConfirmModalCancel"></button>
+            </div>
+        </div>
+    </div>
+    <div id="aboutModal" class="modal">
+        <div class="modalContent">
+            <div class="modalHeader">
+                <h2 id="aboutModalHeading"></h2>
+            </div>
+            <div class="modal-body">
+                <div id="aboutModalBody">
+                    <p id="aboutModalText"></p>
+                </div>
+            </div>
+            <div class="modalFooter">
+                <button id="btnAboutModalClose"></button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

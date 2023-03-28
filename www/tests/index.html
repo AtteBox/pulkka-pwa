@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pine Test Framework</title>
+</head>
+<link rel="stylesheet" href="/tests/style.css" />
+<script type="module" src="/tests/main.js">
+</script>
+
+<body>
+    <h1>🌲 Pine Test Framework</h1><span id="spanHeadingAddInfo">by the pulkka project</span>
+    <div id="rootContainer">
+        <div id="testResultsContainer">
+            <h1>🤔 Test Results</h1>
+            <h2>Tests Statistics:</h2>
+            <ul id="ulTestStats">
+                <li id="liTotalTests">Total Tests: <span id="spanTotalTests">0</span></li>
+                <li id="liTotalPasses">Total Passes: <span id="spanTotalPasses">0</span></li>
+                <li id="liTotalFails">Total Fails: <span id="spanTotalFails">0</span></li>
+            </ul>
+            <h2>Individual Tests:</h2>
+            <ul id="ulTestResults"></ul>
+        </div>
+        <div id="testAppContainer">
+            <h1>🕵️‍♀️ Testable App</h1>
+            <iframe id="testFrame" src="/" frameborder="0" width="500" height="800"></iframe>
+        </div>
+    </div>
+</body>
+
+</html>

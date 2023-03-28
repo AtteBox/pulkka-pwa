@@ -1,0 +1,428 @@
+:root {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    padding: 0.13rem;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: #000;
+}
+
+select {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    padding: 0.13rem;
+    border-radius: 2px;
+    border-width: 1px;
+    border-color: #000;
+}
+
+h1 {
+    font-size: 1.7rem;
+    text-align: center;
+    letter-spacing: 0.03rem;
+    text-transform: uppercase;
+}
+
+button {
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 0.6rem;
+    margin: 0.25rem;
+    font-size: 0.75rem;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 0px 0px 3px 0px rgba(56, 56, 56, 0.75);
+}
+
+#background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(#a6a6a6, #ffffff);
+    height: 100vh;
+    margin: 0;
+}
+
+#contentContainer {
+    display: grid;
+    grid-template-columns: 20px 1fr 20px;
+    max-width: 600px;
+    vertical-align: middle;
+}
+
+#containerLanguageSelection {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 0;
+    grid-row-end: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 0.9rem;
+    width: max-content;
+}
+
+#containerLanguageSelection button {
+    line-height: 0.9rem;
+    margin: 0;
+    padding: 6px;
+    padding-top:0;
+    padding-bottom:0;
+    margin-top:0;
+    margin-bottom:0;
+    background-color: transparent;
+    border: none;
+    color: #0000ee;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+#containerLanguageSelection button:hover {
+    text-shadow: 0px 0px 1px rgba(79, 79, 255, 0.75);
+    box-shadow: none;
+}
+
+#containerHeader {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    display: flex;
+}
+
+#containerHeaderRight {
+    display: flex;
+    align-items: center;
+}
+
+#containerHeaderLeft {
+    display: flex;
+    align-items: center;
+    width: 90%;
+}
+
+#btnAbout {
+    font-size: 1.75rem;
+    padding: 0px 2px 0px 2px;
+    margin: 0;
+    margin-left: 0.5em;
+    border: none;
+    background-color: transparent;
+    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+}
+
+#btnAbout:hover {
+    box-shadow: 0px 0px 3px 0px rgba(56, 56, 56, 0.75);
+}
+
+#spanAppVersion {
+    font-size: 0.6rem;
+    margin-left: 0.5em;
+}
+
+#containerWelcomeText {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 2;
+    white-space: pre-line;
+    display: flex;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+#txtWelcomeText {
+    width: 95%;
+    min-width: 50px;
+    font-size: 0.8rem;
+}
+
+#btnAddStamp {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    background-color: #bbb;
+    margin: 0;
+}
+
+#btnAddStamp.arriveStyle {
+    background-color: #70b565;
+    transition: background-color 0.5s;
+}
+
+#btnAddStamp.arriveStyle:hover {
+    background-color: #70c565;
+}
+
+#btnAddStamp.leaveStyle {
+    background-color: #d46060;
+    transition: background-color 0.5s;
+}
+
+#btnAddStamp.leaveStyle:hover {
+    background-color: #e46060;
+}
+
+#addStampValidationContainer {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 4;
+    grid-row-end: 4;
+    height: 2em;
+    overflow-y: auto;
+    padding: 2px;
+    margin-bottom: 2px;
+    font-size: 0.8rem;
+}
+
+#headingStamps {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 5;
+    grid-row-end: 5;
+    margin-top: 0;
+    ;
+}
+
+#containerStamps {
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 6;
+    grid-row-end: 6;
+    height: 40vh;
+    overflow-y: scroll;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0 0 5px 0;
+    border-color: #d0d0d0;
+    border-top: none;
+    border-left: none;
+}
+
+.editStampBtn {
+    font-size: 0.8rem;
+    background-color: #888;
+    text-transform: uppercase;
+    color: #000;
+    padding: 7px;
+}
+
+.editStampBtn:hover {
+    background-color: #999;
+}
+
+.deleteStampBtn {
+    font-size: 0.8rem;
+    background-color: #d46060;
+    vertical-align: middle;
+    text-transform: uppercase;
+    padding: 7px;
+}
+
+.deleteStampBtn:hover {
+    background-color: #e46060;
+}
+
+#containerStamps h3 {
+    margin: 0;
+}
+
+#containerStampFunctions {
+    padding: 1rem;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    grid-column-start: 2;
+    grid-column-end: 2;
+    grid-row-start: 7;
+    grid-row-end: 7;
+}
+
+#containerStamps ul {
+    list-style-type: none;
+    padding: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+}
+
+#containerStamps li {
+    font-size: 1.5rem;
+    margin-right: 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#containerStamps li::before {
+    font-size: 1rem;
+    vertical-align: middle;
+}
+
+#containerStamps li.arrive::before {
+    content: "🤠 ";
+}
+
+#containerStamps li.leave::before {
+    content: "🤯 ";
+}
+
+#containerStamps li.arrive {
+    color: #70c565;
+}
+
+#containerStamps li.leave {
+    color: #e45050;
+}
+
+/* the modal's background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    background-color: rgb(240, 240, 240, 0.95);
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    max-width: 700px;
+}
+
+#confirmModal .modalContent {
+    padding: 20px;
+    text-align: center;
+}
+
+.modalHeader {
+    text-align: center;
+}
+
+.modalFooter {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    text-transform: uppercase;
+}
+
+.modalFooter button {
+    padding: 0.5em 1em;
+    font-size: 1rem;
+}
+
+.validationMsgContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #e45050;
+}
+
+#editStampModalBody {
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 20px;
+    grid-template-rows: 5ßpx 1fr 1fr 1fr 20px;
+}
+
+#editStampModal {
+    background-color: rgb(240, 240, 240, 0.5);
+}
+
+#btnEditStampModalSave {
+    background-color: #70b565;
+}
+
+#btnEditStampModalSave:hover {
+    background-color: #70c565;
+}
+
+#editStampModalBody .validationMsgContainer {
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: center;
+}
+
+#lblStampDate {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+#inpStampDate {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    margin-bottom: 0.5rem;
+}
+
+#lblStampTime {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+#inpStampTime {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    margin-bottom: 0.5rem;
+}
+
+#lblStampType {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+#selStampType {
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    margin-bottom: 0.5rem;
+}
+
+#btnConfirmModalConfirm {
+    background-color: #d46060;
+}
+
+#btnConfirmModalConfirm:hover {
+    background-color: #e46060;
+}
