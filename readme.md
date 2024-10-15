@@ -2,7 +2,7 @@
 
 A simple PWA app for clocking in and out of work.
 
-You can try the deployed "production" version here: https://pulkka-380818.ey.r.appspot.com
+You can try the deployed "production" version here: https://main.d3bt9df6k8utdf.amplifyapp.com
 
 ## Idea
 > The idea was to have a "button" on my phone that I can press when I enter work straight at the door and also when I leave work, so that I can later input the exact time to the work hours tracking system. Although there [seems to be many apps](https://buddypunch.com/blog/clock-in-clock-out-app/)  for this purpose, I decided to build my own, because it is a very basic todo-app-like idea, and there are some things I wanted to experiment with such as Progressive Web Apps (PWA) and I also wanted to try not to use any external libraries and instead rely on web standards solely.
@@ -67,10 +67,5 @@ Now you can test the app at http://localhost:3000. You can always run the integr
 Note! Never change the URL of the **serviceworker.js** file, because the existing PWA installations/instances rely on that resource/URL to always be available.
 
 ## Deploying
-The **app.yaml** file is for [Google App Engine Deployment](https://cloud.google.com/appengine/docs/legacy/standard/python/getting-started/hosting-a-static-website). Follow the instructions about how to install **gcloud cli**, create a project and initialize it for this directory. After that you can deploy the app by executing:
 
-```
-gcloud app deploy
-```
-
-Remember to commit and push the PWA preparing changes to the repo.
+After the app has been prepared for deployment, the app will be deployed automatically ([AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)) when merged through a PR to the main branch.
