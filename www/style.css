@@ -54,6 +54,7 @@ button:hover {
 
 #background {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background: linear-gradient(#a6a6a6, #ffffff);
@@ -429,4 +430,8 @@ button:hover {
 
 #btnConfirmModalConfirm:hover {
     background-color: #e46060;
+}
+
+#footerText {
+    font-size: 0.8rem;
 }
