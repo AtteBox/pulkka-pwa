@@ -186,7 +186,7 @@ button:hover {
     grid-row-start: 4;
     grid-row-end: 4;
     height: 2em;
-    overflow-y: auto;
+    overflow-y: hidden;
     padding: 2px;
     margin-bottom: 2px;
     font-size: 0.8rem;
@@ -207,7 +207,7 @@ button:hover {
     grid-row-start: 6;
     grid-row-end: 6;
     height: 40vh;
-    overflow-y: scroll;
+    overflow-y: auto;
     border-width: 1px;
     border-style: solid;
     border-radius: 0 0 5px 0;
