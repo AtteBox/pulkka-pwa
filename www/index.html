@@ -15,7 +15,7 @@
 
 <body>
     <div id="background">
-        <div id="contentContainer">
+        <main id="contentContainer">
             <div id="containerHeader">
                 <div id="containerHeaderLeft">
                     <h1 id="headingTitle"></h1>
@@ -40,9 +40,13 @@
                 <button id="btnClearStamps"></button>
                 <button id="btnDownloadStampsCsv"></button>
             </div>
-        </div>
+        </main>
+        <footer>
+            <p id="footerText">
+            </p>
+        </footer>
     </div>
-    <div id="editStampModal" class="modal">
+    <div id="editStampModal" aria-labelledby="editStampModalHeading" role="dialog" aria-modal="true"  class="modal">
         <div class="modalContent">
             <div class="modalHeader">
                 <h2 id="editStampModalHeading"></h2>
@@ -67,7 +71,7 @@
             </div>
         </div>
     </div>
-    <div id="confirmModal" class="modal">
+    <div id="confirmModal" aria-labelledby="confirmModalHeading" role="dialog" aria-modal="true" class="modal">
         <div class="modalContent">
             <div class="modalHeader">
                 <h2 id="confirmModalHeading"></h2>
@@ -83,7 +87,7 @@
             </div>
         </div>
     </div>
-    <div id="aboutModal" class="modal">
+    <div id="aboutModal" aria-labelledby="aboutModalHeading" role="dialog" aria-modal="true" class="modal">
         <div class="modalContent">
             <div class="modalHeader">
                 <h2 id="aboutModalHeading"></h2>
