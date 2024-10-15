@@ -49,6 +49,7 @@ export class UI {
             btnDownloadStampsCsv: document.getElementById("btnDownloadStampsCsv"),
             containerLanguageSelection: document.getElementById("containerLanguageSelection"),
             spanAppVersion: document.getElementById("spanAppVersion"),
+            footerText: document.getElementById("footerText"),
         };
 
         this.bindInitialDomEvents();
@@ -148,6 +149,7 @@ export class UI {
         this.#elems.headingStamps.textContent = this.#language.t("stamps");
         this.#elems.btnClearStamps.textContent =
             this.#language.t("clearStamps");
+        this.#elems.footerText.textContent = `© Atte Virtanen ${new Date().getFullYear()}`;
     }
 
     refreshLanguageSelection() {
