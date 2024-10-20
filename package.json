@@ -1,0 +1,15 @@
+{
+  "name": "pulkka-pwa",
+  "version": "0.0.0",
+  "description": "A simple PWA app for clocking in and out of work.",
+  "scripts": {
+    "dev": "npx vite",
+    "preview": "npx serve www",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.7"
+  }
+}
