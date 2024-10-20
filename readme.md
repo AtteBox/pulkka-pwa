@@ -22,15 +22,19 @@ You can try the deployed "production" version here: https://main.d3bt9df6k8utdf.
 - integration tests (using the app from the parent frame)
 
 ## About the code
-The aim is to not use any third party libraries such as npm packages and instead rely on web standards such as ES modules. For DX convenience the [Serve](https://github.com/vercel/serve) and [Vite](https://vitejs.dev/) npm packages are used as development servers.
+**The aim is to not use any third party libraries such as npm packages** and instead rely on web standards such as ES modules. For DX convenience the [Serve](https://github.com/vercel/serve) and [Vite](https://vitejs.dev/) npm packages are used as development servers.
+
+For the above reason, an own test runner/framework "Pine" was rapidly developed.
+
+[Playwright](https://playwright.dev/) is used only so that the tests can be run from the command line.
 
 ## Developing
 The **jsconfig.json** file and the type definitions ([TS](https://www.typescriptlang.org/) in comments) work well with [VS Code](https://code.visualstudio.com/).
 
-You can start the development server by using Vite (which requires [Node.js](https://nodejs.org/en) by the way) by running the following command:
+You can start the development server by using [Vite](https://vite.dev/) (which requires [Node.js](https://nodejs.org/en) by the way) by running the following command:
 
 ```
-npx vite
+npm run dev
 ```
 
 Now you can test the app at http://localhost:4000. Vite's options are defined in the **vite.config.js** file. Vite allows for *hot reloading* and when developing, the [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API) is not used (so that all files are served to the app straight from the server).
@@ -45,27 +49,47 @@ The test code can be found in **/www/tests** and the actual test cases are locat
 ### 1. Update the offline file list
 The PWA uses an offline file list for the files which should be cached in the PWA so that it works without an internet connection. The following command creates the offline file list (execute from [Powershell](https://learn.microsoft.com/sv-se/powershell/)):
 ```
-createOfflineFiles.ps1
+./createOfflineFiles.ps1
 ```
 
 ### 2. Update the app version
 The service worker gets updated if the service worker code changes and that will cause an update in the PWA installations. To make sure this will happen (so that the offline caches for the other files will be updated), update the VERSION in the www/version.js file by running the following command (using powershell):
 
 ```
-incrementVersion.ps1 -IncrementType {patch | minor | major}
+./incrementVersion.ps1 -IncrementType {patch | minor | major}
 ```
 
 ### 3. Testing the new changes with the service worker
 
-If you want to test the app with the **service worker**, then serve the www-directory as static files with the serve package (Node is required):
+If you want to test the app with the **service worker**, then serve the www-directory as static files with the [Serve](https://github.com/vercel/serve) package (Node is required):
 
 ```
-npx serve www
+npm run preview
 ```
 Now you can test the app at http://localhost:3000. You can always run the integration test suite at http://localhost:3000/tests/.
 
 Note! Never change the URL of the **serviceworker.js** file, because the existing PWA installations/instances rely on that resource/URL to always be available.
 
-## Deploying
+## 4. Deploying
 
 After the app has been prepared for deployment, the app will be deployed automatically ([AWS Amplify](https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html)) when merged through a PR to the main branch.
+
+## 5. Running the tests from the command line
+
+For further development it is convenient, that the test suite can be run from the command line. And thus, enabling the tests to be ran in CI/CD pipelines. 
+
+The obvious choice for enabling this would be to use the JSDom package (on Node), but from a security point of view it is a better idea to use the sandbox of a real browser for running the Javascript code. Therefore [Playwright](https://playwright.dev/)  was chosen. And the tests against the Vite served app and Pine-framework can be run using the following commands:
+
+```
+npm i
+npx playwright install --with-deps
+npm run e2e
+```
+
+You can run Plawright in UI-mode by the following command:
+
+```
+npm run e2e:ui
+```
+
+Using Playwright also makes it possible for testing the app against different browsers as opposed to JSDom.

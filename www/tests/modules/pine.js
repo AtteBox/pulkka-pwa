@@ -1,3 +1,11 @@
+/**
+ * Create a new pine test suite
+ * 
+ * Pine is a simple testing framework for testing web pages, programmed for this project and runs in a browser.
+ * 
+ * @param {*} name 
+ * @param {*} describeFunction 
+ */
 export function describe(name, describeFunction) {
     // TODO: Currently there can be only one describe block
     const testFrame = document.getElementById("testFrame");
@@ -65,7 +73,7 @@ export function describe(name, describeFunction) {
         return {
             toEqual: (/** @type {any} */ expected, /** @type {string} */ message) => {
                 if (actual !== expected) {
-                    throw new Error(`Expected "${actual}" to equal "${expected}"${message ? ": " + message : ""}}`);
+                    throw new Error(`Expected "${actual}" to equal "${expected}"${message ? ": " + message : ""}`);
                 }
             },
             toContain: (/** @type {any} */ expected, /** @type {string} */ message) => {
@@ -73,13 +81,13 @@ export function describe(name, describeFunction) {
                     throw new Error(`Expected "${actual}" to have the includes method ie. be an array or string`);
                 }
                 if (!actual.includes(expected)) {
-                    throw new Error(`Expected "${actual}" to contain "${expected}"${message ? ": " + message : ""}}`);
+                    throw new Error(`Expected "${actual}" to contain "${expected}"${message ? ": " + message : ""}`);
                 }
             },
             not: {
                 toEqual: (/** @type {any} */ expected, /** @type {string} */ message) => {
                     if (actual === expected) {
-                        throw new Error(`Expected "${actual}" to not equal "${expected}"${message ? ": " + message : ""}}`);
+                        throw new Error(`Expected "${actual}" to not equal "${expected}"${message ? ": " + message : ""}`);
                     }
                 },
                 toContain: (/** @type {any} */ expected, /** @type {string} */ message) => {
@@ -87,7 +95,7 @@ export function describe(name, describeFunction) {
                         throw new Error(`Expected "${actual}" to have the includes method ie. be an array or string`);
                     }
                     if (actual.includes(expected)) {
-                        throw new Error(`Expected "${actual}" to not contain "${expected}"${message ? ": " + message : ""}}`);
+                        throw new Error(`Expected "${actual}" to not contain "${expected}"${message ? ": " + message : ""}`);
                     }
                 }
             }

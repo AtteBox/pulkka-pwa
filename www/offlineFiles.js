@@ -5,6 +5,7 @@ const OFFLINE_FILES = [
   "/main.js",
   "/manifest.json",
   "/offlineFiles.js",
+  "/README.md",
   "/serviceworker.js",
   "/style.css",
   "/translations.js",
