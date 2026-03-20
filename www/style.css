@@ -1,55 +1,94 @@
 :root {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #000;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #1a1a2e;
+    --color-arrive: #2ecc71;
+    --color-arrive-hover: #27ae60;
+    --color-leave: #e74c3c;
+    --color-leave-hover: #c0392b;
+    --color-neutral: #f0f0f5;
+    --color-border: #e0e0e8;
+    --color-text-muted: #6c6c80;
+    --color-accent: #4a6cf7;
+    --color-accent-hover: #3b5de7;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: #f5f5fa;
 }
 
 input {
-    color:#000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1a1a2e;
+    font-family: inherit;
     font-size: 1rem;
-    padding: 0.13rem;
-    border-radius: 2px;
-    border-width: 1px;
-    border-color: #000;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
 }
 
 select {
-    color:#000;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1a1a2e;
+    font-family: inherit;
     font-size: 1rem;
-    padding: 0.13rem;
-    border-radius: 2px;
-    border-width: 1px;
-    border-color: #000;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: #fff;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(74, 108, 247, 0.15);
 }
 
 h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     text-align: center;
-    letter-spacing: 0.03rem;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 button {
     appearance: none;
-    color:#000;
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    padding: 0.6rem;
+    color: #1a1a2e;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--color-border);
+    background-color: #fff;
+    padding: 0.6rem 1rem;
     margin: 0.25rem;
-    font-size: 0.75rem;
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 500;
     vertical-align: middle;
     cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 button:hover {
-    box-shadow: 0px 0px 3px 0px rgba(56, 56, 56, 0.75);
+    box-shadow: var(--shadow-sm);
+    border-color: #ccc;
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 #background {
@@ -57,58 +96,56 @@ button:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(#a6a6a6, #ffffff);
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 #contentContainer {
     display: grid;
-    grid-template-columns: 20px 1fr 20px;
-    max-width: 600px;
-    vertical-align: middle;
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    width: 100%;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
 }
 
 #containerLanguageSelection {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 0;
-    grid-row-end: 0;
-    margin-top: 1em;
-    margin-bottom: 1em;
     margin: 0;
     padding: 0;
     display: flex;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     width: max-content;
+    gap: 0.25rem;
 }
 
 #containerLanguageSelection button {
-    line-height: 0.9rem;
+    line-height: 1;
     margin: 0;
-    padding: 6px;
-    padding-top:0;
-    padding-bottom:0;
-    margin-top:0;
-    margin-bottom:0;
+    padding: 0.25rem 0.5rem;
     background-color: transparent;
     border: none;
-    color: #0000ee;
-    text-decoration: underline;
-    font-size: 1rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s;
 }
 
 #containerLanguageSelection button:hover {
-    text-shadow: 0px 0px 1px rgba(79, 79, 255, 0.75);
+    background-color: rgba(74, 108, 247, 0.08);
     box-shadow: none;
 }
 
 #containerHeader {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 1;
     display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 #containerHeaderRight {
@@ -119,77 +156,81 @@ button:hover {
 #containerHeaderLeft {
     display: flex;
     align-items: center;
-    width: 90%;
+    flex: 1;
 }
 
 #btnAbout {
-    font-size: 1.75rem;
-    padding: 0px 2px 0px 2px;
+    font-size: 1.5rem;
+    padding: 0.15rem 0.4rem;
     margin: 0;
     margin-left: 0.5em;
-    border: none;
-    background-color: transparent;
-    box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--color-border);
+    background-color: var(--color-neutral);
+    border-radius: 50%;
+    box-shadow: none;
+    line-height: 1;
 }
 
 #btnAbout:hover {
-    box-shadow: 0px 0px 3px 0px rgba(56, 56, 56, 0.75);
+    background-color: #e8e8f0;
+    box-shadow: var(--shadow-sm);
 }
 
 #spanAppVersion {
-    font-size: 0.6rem;
+    font-size: 0.65rem;
     margin-left: 0.5em;
+    color: var(--color-text-muted);
 }
 
 #containerWelcomeText {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 2;
     white-space: pre-line;
     display: flex;
-    margin-top: 1em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
 }
 
 #txtWelcomeText {
-    width: 95%;
-    min-width: 50px;
-    font-size: 0.8rem;
+    width: 100%;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--color-text-muted);
 }
 
 #btnAddStamp {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 3;
-    background-color: #bbb;
+    background-color: var(--color-neutral);
     margin: 0;
+    padding: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: none;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 #btnAddStamp.arriveStyle {
-    background-color: #70b565;
-    transition: background-color 0.5s;
+    background-color: var(--color-arrive);
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #btnAddStamp.arriveStyle:hover {
-    background-color: #70c565;
+    background-color: var(--color-arrive-hover);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
 }
 
 #btnAddStamp.leaveStyle {
-    background-color: #d46060;
-    transition: background-color 0.5s;
+    background-color: var(--color-leave);
+    color: #fff;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #btnAddStamp.leaveStyle:hover {
-    background-color: #e46060;
+    background-color: var(--color-leave-hover);
+    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
 }
 
 #addStampValidationContainer {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 4;
-    grid-row-end: 4;
     height: 2em;
     overflow-y: hidden;
     padding: 2px;
@@ -198,86 +239,99 @@ button:hover {
 }
 
 #headingStamps {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 5;
-    grid-row-end: 5;
-    margin-top: 0;
-    ;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 #containerStamps {
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 6;
-    grid-row-end: 6;
     height: 40vh;
     overflow-y: auto;
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 0 0 5px 0;
-    border-color: #d0d0d0;
-    border-top: none;
-    border-left: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-neutral);
+}
+
+#containerStamps::-webkit-scrollbar {
+    width: 6px;
+}
+
+#containerStamps::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#containerStamps::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
 }
 
 .editStampBtn {
-    font-size: 0.8rem;
-    background-color: #888;
+    font-size: 0.75rem;
+    background-color: var(--color-neutral);
     text-transform: uppercase;
-    color: #000;
-    padding: 7px;
+    color: #1a1a2e;
+    padding: 0.35rem 0.6rem;
+    border: 1px solid var(--color-border);
 }
 
 .editStampBtn:hover {
-    background-color: #999;
+    background-color: #e0e0e8;
 }
 
 .deleteStampBtn {
-    font-size: 0.8rem;
-    background-color: #d46060;
+    font-size: 0.75rem;
+    background-color: #fef0f0;
+    color: var(--color-leave);
+    border: 1px solid #f5c6c6;
     vertical-align: middle;
     text-transform: uppercase;
-    padding: 7px;
+    padding: 0.35rem 0.6rem;
 }
 
 .deleteStampBtn:hover {
-    background-color: #e46060;
+    background-color: #fde4e4;
+    border-color: #e8a0a0;
 }
 
 #containerStamps h3 {
     position: sticky;
     top: 0;
     margin: 0;
-    width: 8.5rem;
-    border-radius: 5px;
-    background-color: #ccc;
-    padding: 0.3rem;
+    border-radius: 0;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 1;
 }
 
 #containerStampFunctions {
-    padding: 1rem;
-    padding-left: 0.7rem;
-    padding-right: 0.7rem;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 7;
-    grid-row-end: 7;
+    padding: 1rem 0;
+    display: flex;
+    gap: 0.5rem;
 }
 
 #containerStamps ul {
     list-style-type: none;
-    padding: 1rem;
-    padding-top: 0;
-    padding-bottom: 0;
+    padding: 0.5rem 1rem;
     margin: 0;
 }
 
 #containerStamps li {
-    font-size: 1.5rem;
-    margin-right: 0;
-    margin-top: 3px;
-    margin-bottom: 3px;
+    font-size: 1.3rem;
+    margin: 0;
+    padding: 0.35rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+#containerStamps li:last-child {
+    border-bottom: none;
 }
 
 #containerStamps li::before {
@@ -286,50 +340,49 @@ button:hover {
 }
 
 #containerStamps li.arrive::before {
-    content: "🤠 ";
+    content: "\1F920 ";
 }
 
 #containerStamps li.leave::before {
-    content: "🤯 ";
+    content: "\1F92F ";
 }
 
 #containerStamps li.arrive {
-    color: #70c565;
+    color: var(--color-arrive-hover);
 }
 
 #containerStamps li.leave {
-    color: #e45050;
+    color: var(--color-leave);
 }
 
-/* the modal's background */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 10;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .modalContent {
-    margin: 15% auto;
-    padding: 20px;
-    width: 80%;
-    background-color: rgb(240, 240, 240, 0.95);
-    border-radius: 5px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #000;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-    max-width: 700px;
+    margin: 10% auto;
+    padding: 1.5rem 2rem;
+    width: 85%;
+    background-color: #fff;
+    border-radius: var(--radius-lg);
+    border: none;
+    box-shadow: var(--shadow-lg);
+    max-width: 480px;
 }
 
 #confirmModal .modalContent {
-    padding: 20px;
+    padding: 1.5rem 2rem;
     text-align: center;
 }
 
@@ -337,18 +390,26 @@ button:hover {
     text-align: center;
 }
 
+.modalHeader h2 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-top: 0;
+}
+
 .modalFooter {
-    padding: 1em;
+    padding: 1em 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5em;
+    gap: 0.75em;
     text-transform: uppercase;
 }
 
 .modalFooter button {
-    padding: 0.5em 1em;
-    font-size: 1rem;
+    padding: 0.6em 1.5em;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
 }
 
 .validationMsgContainer {
@@ -356,25 +417,31 @@ button:hover {
     justify-content: center;
     align-items: center;
     height: 100%;
-    color: #e45050;
+    color: var(--color-leave);
+    font-size: 0.85rem;
 }
 
 #editStampModalBody {
     display: grid;
     grid-template-columns: 20px 1fr 1fr 20px;
-    grid-template-rows: 5ßpx 1fr 1fr 1fr 20px;
+    grid-template-rows: 5px 1fr 1fr 1fr 20px;
+    gap: 0.25rem;
+    align-items: center;
 }
 
 #editStampModal {
-    background-color: rgb(240, 240, 240, 0.5);
+    background-color: rgba(0, 0, 0, 0.35);
 }
 
 #btnEditStampModalSave {
-    background-color: #70b565;
+    background-color: var(--color-arrive);
+    color: #fff;
+    border: none;
 }
 
 #btnEditStampModalSave:hover {
-    background-color: #70c565;
+    background-color: var(--color-arrive-hover);
+    box-shadow: 0 2px 8px rgba(46, 204, 113, 0.3);
 }
 
 #editStampModalBody .validationMsgContainer {
@@ -390,6 +457,7 @@ button:hover {
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
+    font-weight: 500;
 }
 
 #inpStampDate {
@@ -405,6 +473,7 @@ button:hover {
     grid-column-end: 3;
     grid-row-start: 4;
     grid-row-end: 5;
+    font-weight: 500;
 }
 
 #inpStampTime {
@@ -420,6 +489,7 @@ button:hover {
     grid-column-end: 3;
     grid-row-start: 5;
     grid-row-end: 6;
+    font-weight: 500;
 }
 
 #selStampType {
@@ -431,13 +501,17 @@ button:hover {
 }
 
 #btnConfirmModalConfirm {
-    background-color: #d46060;
+    background-color: var(--color-leave);
+    color: #fff;
+    border: none;
 }
 
 #btnConfirmModalConfirm:hover {
-    background-color: #e46060;
+    background-color: var(--color-leave-hover);
+    box-shadow: 0 2px 8px rgba(231, 76, 60, 0.3);
 }
 
 #footerText {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
 }
