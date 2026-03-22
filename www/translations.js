@@ -37,6 +37,8 @@ const TRANSLATION_EN = {
     exportCsv: "Export to CSV",
     deleteAllStampsConfirmationMessage: "Are you sure you want to delete all records?",
     deleteStamp: "Delete record",
+    darkMode: "Dark mode",
+    lightMode: "Light mode",
 }
 
 /**
@@ -78,6 +80,8 @@ const TRANSLATION_FI = {
     welcomeText: "Tervetuloa käyttämään Pulkka työleimaussovellusta!",
     close: "Sulje",
     exportCsv: "Vie CSV-tiedostoon",
+    darkMode: "Tumma teema",
+    lightMode: "Vaalea teema",
 }
 
 /**

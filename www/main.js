@@ -1,6 +1,7 @@
 import { Persistence } from "./modules/persistence.js";
 import { Logic } from "./modules/logic.js";
 import { Language } from "./modules/language.js";
+import { Theme } from "./modules/theme.js";
 import { UI } from "./modules/ui.js";
 import { registerServiceworker } from "./modules/registerServiceworker.js";
 import { ALL_TRANSLATIONS } from "./translations.js";
@@ -13,6 +14,8 @@ const language = new Language(
     navigator.languages
 );
 
-const ui = new UI(new Logic(new Persistence()), language);
+const theme = new Theme();
+
+const ui = new UI(new Logic(new Persistence()), language, theme);
 
 registerServiceworker(ui)
