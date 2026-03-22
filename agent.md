@@ -1,5 +1,7 @@
 # Agent Notes
 
+**Important:** Always read `readme.md` before starting work on this project. It contains essential information about the project's architecture, conventions, and workflows.
+
 ## Versioning
 
 This project uses a custom PWA versioning system. The version is defined in `www/version.js` (not `package.json`).
