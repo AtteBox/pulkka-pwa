@@ -118,6 +118,7 @@ button:active {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
     font-size: 0.85rem;
     width: max-content;
     gap: 0.25rem;
