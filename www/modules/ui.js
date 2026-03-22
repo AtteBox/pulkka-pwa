@@ -157,10 +157,8 @@ export class UI {
         let isFirst = true;
         for (const lang of this.#language.supportedLanguages) {
             if(!isFirst) this.#elems.containerLanguageSelection.appendChild(document.createTextNode(" | "));
-            if(lang === this.#language.language) {
-                const span = document.createElement("span");
-                span.textContent = lang;
-                this.#elems.containerLanguageSelection.appendChild(span)
+            if(lang === this.#language.language) { 
+                this.#elems.containerLanguageSelection.appendChild(document.createTextNode(lang))
             } else {
                 const btn = document.createElement("button");
                 btn.textContent = lang;
