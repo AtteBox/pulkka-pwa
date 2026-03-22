@@ -2,6 +2,10 @@
 
 **Important:** Always read `readme.md` before starting work on this project. It contains essential information about the project's architecture, conventions, and workflows.
 
+## PR Completion
+
+When all work for a PR is done, always ask the user whether a new version should be prepared (version bump in `www/version.js`). Include the current version and suggest an appropriate increment type (patch, minor, or major) based on the scope of changes.
+
 ## Versioning
 
 This project uses a custom PWA versioning system. The version is defined in `www/version.js` (not `package.json`).
