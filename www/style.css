@@ -118,16 +118,16 @@ button:active {
     margin: 0;
     padding: 0;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     font-size: 0.85rem;
     width: max-content;
     gap: 0.25rem;
 }
 
 #containerLanguageSelection button {
-    line-height: 1;
+    line-height: inherit;
     margin: 0;
-    padding: 0.25rem 0.5rem;
+    padding: 0 0.25rem;
     background-color: transparent;
     border: none;
     color: var(--color-accent);
