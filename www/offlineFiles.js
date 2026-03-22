@@ -20,6 +20,7 @@ const OFFLINE_FILES = [
   "/modules/model.js",
   "/modules/persistence.js",
   "/modules/registerServiceworker.js",
+  "/modules/theme.js",
   "/modules/ui.js",
   "/modules/utils/download.js",
   "/modules/utils/number.js"
