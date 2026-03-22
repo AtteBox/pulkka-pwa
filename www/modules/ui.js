@@ -7,15 +7,18 @@ import { toPaddedString } from "./utils/number.js";
 export class UI {
     #logic;
     #language;
+    #theme;
     #elems;
 
     /**
      * @param {import("./logic").Logic} logic
      * @param {import("./language").Language} language
+     * @param {import("./theme").Theme} theme
      */
-    constructor(logic, language) {
+    constructor(logic, language, theme) {
         this.#logic = logic;
         this.#language = language;
+        this.#theme = theme;
 
         this.#elems = {
             btnAddStamp: document.getElementById("btnAddStamp"),
@@ -50,6 +53,7 @@ export class UI {
             containerLanguageSelection: document.getElementById("containerLanguageSelection"),
             spanAppVersion: document.getElementById("spanAppVersion"),
             footerText: document.getElementById("footerText"),
+            btnThemeToggle: document.getElementById("btnThemeToggle"),
         };
 
         this.bindInitialDomEvents();
@@ -57,6 +61,10 @@ export class UI {
         this.#language.addLanguageChangeListener(() => {
             this.refreshInitialView();
         })
+
+        this.#theme.addThemeChangeListener(() => {
+            this.refreshThemeToggle();
+        });
 
         this.refreshInitialView();
     }
@@ -120,6 +128,9 @@ export class UI {
         this.#elems.btnDownloadStampsCsv.addEventListener("click", () => {
             this.downloadStampCsv();
         });
+        this.#elems.btnThemeToggle.addEventListener("click", () => {
+            this.#theme.toggle();
+        });
     }
 
     refreshInitialView() {
@@ -127,6 +138,14 @@ export class UI {
         this.refreshStampList();
         this.refreshInitialViewTexts();
         this.refreshLanguageSelection();
+        this.refreshThemeToggle();
+    }
+
+    refreshThemeToggle() {
+        this.#elems.btnThemeToggle.textContent = this.#theme.isDark ? "\u2600\uFE0F" : "\uD83C\uDF19";
+        this.#elems.btnThemeToggle.title = this.#theme.isDark
+            ? this.#language.t("lightMode")
+            : this.#language.t("darkMode");
     }
 
     refreshInitialViewTexts() {

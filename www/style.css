@@ -36,6 +36,40 @@
     color: var(--color-text);
 }
 
+[data-theme="dark"] {
+    --color-text: #e0e0f0;
+    --color-white: #1e1e2e;
+    --color-bg: #12121a;
+    --color-arrive: #2ecc71;
+    --color-arrive-hover: #27ae60;
+    --color-leave: #e74c3c;
+    --color-leave-hover: #c0392b;
+    --color-neutral: #2a2a3e;
+    --color-neutral-hover: #33334a;
+    --color-border: #3a3a50;
+    --color-border-light: #4a4a60;
+    --color-text-muted: #9090a8;
+    --color-accent: #6b8cff;
+    --color-accent-hover: #5a7bf0;
+    --color-danger-bg: #3a1a1a;
+    --color-danger-bg-hover: #4a2020;
+    --color-danger-border: #6a3030;
+    --color-danger-border-hover: #804040;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-accent-focus: 0 0 0 3px rgba(107, 140, 255, 0.25);
+    --shadow-accent-subtle: rgba(107, 140, 255, 0.15);
+    --shadow-arrive: 0 4px 12px rgba(46, 204, 113, 0.25);
+    --shadow-arrive-sm: 0 2px 8px rgba(46, 204, 113, 0.25);
+    --shadow-leave: 0 4px 12px rgba(231, 76, 60, 0.25);
+    --shadow-leave-sm: 0 2px 8px rgba(231, 76, 60, 0.25);
+    --color-separator: rgba(255, 255, 255, 0.06);
+    --color-overlay: rgba(0, 0, 0, 0.6);
+    --color-overlay-light: rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -537,6 +571,23 @@ button:active {
 #footerText {
     font-size: 0.75rem;
     color: var(--color-text-muted);
+}
+
+#btnThemeToggle {
+    font-size: 1.5rem;
+    padding: 0.15rem 0.4rem;
+    margin: 0;
+    margin-left: 0.5em;
+    border: 1px solid var(--color-border);
+    background-color: var(--color-neutral);
+    border-radius: 50%;
+    box-shadow: none;
+    line-height: 1;
+}
+
+#btnThemeToggle:hover {
+    background-color: var(--color-neutral-hover);
+    box-shadow: var(--shadow-sm);
 }
 
 @media (max-width: 320px) {
