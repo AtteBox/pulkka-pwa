@@ -478,6 +478,10 @@ button:active {
     font-size: 0.85rem;
 }
 
+.validationMsgContainer p:empty {
+    display: none;
+}
+
 #editStampModalBody {
     display: grid;
     grid-template-columns: 20px 1fr 1fr 20px;
