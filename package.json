@@ -9,7 +9,7 @@
     "e2e:ui": "playwright test --ui"
   },
   "devDependencies": {
-    "@playwright/test": "^1.60.0",
-    "@types/node": "^22.19.19"
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^22.20.0"
   }
 }
